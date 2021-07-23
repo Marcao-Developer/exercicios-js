@@ -3,59 +3,54 @@ const peso = document.querySelector('#peso');
 const altura = document.querySelector('#altura');
 
 
-botaoEnviar.addEventListener('click', ()=>{
-    const resultadoVerificacao = verificarEntradas();
+botaoEnviar.addEventListener('click', () => {
+    const altura = Number(altura.value)
+    const peso = Number(peso.value)
 
-    if(resultadoVerificacao !== true){
-        setarElemento('p', 'resultado-ruim', resultadoVerificacao);
-    }else if(resultadoVerificacao === true){
-        setarElemento('p', 'resultado-bom', resulImc(Number(peso.value), Number(altura.value)))
+    const error = validateImcInputs(altura, peso);
+
+    if (error) {
+        setResult(false, error);
+    } else {
+        setResult(true, getImcMessage(peso, altura))
     }
 });
 
-function verificarEntradas() {
-    let res;
-
-    if(!Number(altura.value) && !Number(peso.value)){
-        res = "Altura e Peso inválidos";
-    }else if(!Number(altura.value)){
-        res = "Altura inválida";
-    }else if(!Number(peso.value)){
-        res = "Peso inválido";
+function validateImcInputs(altura, peso) {
+    if(!altura && !peso) {
+        return "Altura e Peso inválidos";
+    } else if (!altura) {
+        return "Altura inválida";
+    } else if (!peso){
+        return "Peso inválido";
     }
-    else res = true;
-
-    return res;
+    else return undefined;
 }
 
-function setarElemento(elemento, classe, conteudo) {
-    const localResultado = document.querySelector('#resultado');
-    let element = document.createElement(elemento);
+function setResult(success, message) {
+    const result = document.querySelector('#resultado');
+    const p = document.createElement('p');
 
-    localResultado.classList.remove('resultado-bom') || localResultado.classList.remove('resultado-ruim');
-    localResultado.classList.add(classe);
-    element.innerText = conteudo;
+    result.classList.remove('resultado-bom') || result.classList.remove('resultado-ruim');
+    result.classList.add(success ? 'resultado-bom' : 'resultado-ruim');
+    p.innerText = message;
 
-    localResultado.innerHTML = "";
-    localResultado.appendChild(element);
+    result.innerHTML = "";
+    result.appendChild(p);
 }
 
-function resulImc(peso, altura) {
-    const resultadoImc = peso/(altura * altura);
-    const resultadoFrase = resultadosFrase(resultadoImc);
+function getImcMessage(peso, altura) {
+    const imc = peso / (altura * altura);
+    const classification = getImcClassification(imc);
 
-    return `Seu IMC é ${resultadoImc.toFixed(2)}(${resultadoFrase})`;
+    return `Seu IMC é ${imc.toFixed(2)}(${classification})`;
 }
 
-function resultadosFrase(valor) {
-    let resultado;
-    
-    if(valor < 18.5) resultado = "Abaixo do peso";
-    else if(valor >= 18.5 && valor <= 24.9) resultado = 'Peso normal';
-    else if(valor >= 25 && valor <= 29.9) resultado = 'Sobrepeso';
-    else if(valor >= 30 && valor <= 34.9) resultado = 'Obesidade Grau 1';
-    else if(valor >= 35 && valor <= 39.9) resultado = 'Obesidade Grau 2';
-    else if(valor >= 40) resultado = 'Obesidade Grau 3';
-
-    return resultado;
+function getImcClassification(imc) {    
+    if (valor < 18.5) return "Abaixo do peso";
+    else if (valor >= 18.5 && valor <= 24.9) return 'Peso normal';
+    else if (valor >= 25 && valor <= 29.9) return 'Sobrepeso';
+    else if (valor >= 30 && valor <= 34.9) return 'Obesidade Grau 1';
+    else if (valor >= 35 && valor <= 39.9) return 'Obesidade Grau 2';
+    else return 'Obesidade Grau 3';
 }
