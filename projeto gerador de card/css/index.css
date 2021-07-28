@@ -1,0 +1,85 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu:wght@300&display=swap');
+
+:root{
+    --background-default: rgb(103, 144, 233);
+    --background-light: rgb(255, 255, 255);
+    --size-card: 840px;
+    --background-dark: rgb(77, 107, 170);
+}
+
+body, html{
+    padding: 0;
+    margin: 0;
+    font-family: 'Ubuntu', sans-serif;
+    background-color: var(--background-default);
+}
+
+.main-title{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container{
+    max-width: var(--size-card);
+    margin: 10px auto;
+    padding: 20px;
+    background-color: var(--background-light);
+    border-radius: 10px;
+}
+
+form label, form input, form button, form div{
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+.paradigms{
+    border-style: solid;
+    padding: 15px;
+    width: calc(var(--size-card) - 200px);
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.paradigms input, .paradigms label, .paradigms button{
+    width: 100%;
+}
+
+.paradigms button{
+    width: auto;
+    font-weight: 1000;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.tipagem{
+    border-style: solid;
+    padding: 15px;
+    width: calc(var(--size-card) - 200px);
+    border-radius: 10px;
+    border-width: 1px;
+}
+
+.tipagem input, .tipagem label, .tipagem button{
+    width: 100%;
+}
+
+.tipagem button{
+    width: auto;
+    font-weight: 1000;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.create-card{
+    font-weight: 600;
+    background-color: var(--background-default);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+}
+
+.create-card:hover{
+    background-color: var(--background-dark);
+}

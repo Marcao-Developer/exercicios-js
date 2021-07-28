@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/index.css">
+    <title>Cria Cards</title>
+</head>
+<body>
+    <div class="main-title">
+        <h1>Criador de Cards Para Linguagens de Programação</h1>
+    </div>
+    <section id='root' class='container'>
+        <form method="POST">
+            <label for="language-name">Linguagem: </label>
+            <input type="text" id="language-name">
+
+            <label for="proposite">Propósito: </label>
+            <input type="text" id="proposite">
+
+            <label for="execution">Execução: </label>
+            <input type="text" id="execution">
+
+            <label for="paradigms">Paradigmas: </label>
+            <div class="paradigms" id="paradigms">
+                <div id='items-paradigm'>
+                    <input type="text" class='paradigm'>
+                </div>
+
+                <button type="button" id='one-more-paradigm'>+</button>
+            </div>
+
+
+            <label for="tipagem">Tipagem: </label>
+            <div class="tipagem" id="tipagem">
+                <div id='items-type'>
+                    <input type="text" class='type'>
+                </div>
+
+                <button type="button" id='one-more-type'>+</button>
+            </div>
+
+            <label for="create-at">Criado em: </label>
+            <input type="text" id='create-at'>
+
+            <label for="author">Criador: </label>
+            <input type="text" id='author'>
+
+            <button type="button" id='create-card' class='create-card'>CRIAR CARD</button>
+        </form>
+    </section>
+
+    <script src="js/index.js"></script>
+</body>
+</html>
