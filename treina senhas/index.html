@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Treinar Senhas</title>
+
+    <link rel='stylesheet' href='./bootstrap/css/bootstrap.css'>
+</head>
+<body>
+
+	<section class='root'>
+		<h1>TREINAR SENHAS</h1>
+    <button id='show-opt'>SHOW OPTIONS</button>
+    <div id="display-opt" class='hidden-opt options-default'>
+        <button type='button' id='clear-psswd'>CLEAR PASSWORD</button>
+        <button type='button' id='new-psswd'>NEW PASSWORD</button>
+        <button type='button' id='show-psswd'>SHOW PASSWORD</button>
+    </div>
+
+    <div class='display-try-psswd'>
+        <label for='try-psswd'>TRY PASSWORD : </label>
+        <input type='text' id='try-psswd'> <button type='button' class='btn btn-success' id='send-try'>SEND PASSWORD</button>
+    </div>
+  </section>
+
+  <script src='index.js'></script>
+</body>
+
+<script>src="./bootstrap/js/bootstrap.js"</script>
+</html>

@@ -1,0 +1,57 @@
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&display=swap');
+
+:root{
+        --background-default: rgba(111, 154, 255, 1);
+}
+
+body, html{
+        padding: 0;
+        margin: 0;
+        font-family: 'Ubuntu Condensed', sans-serif;
+        background-color: var(--background-default);
+}
+
+.root{
+        max-width: 500px;
+        min-height: fit-content;
+        margin: 50px auto;
+        padding: 20px;
+        border-top-style: solid;
+        border-bottom-style: solid;
+}
+
+.root button{
+        border-radius: 10px;
+        padding: 5px;
+        margin-right: 10px;
+        border-style: none;
+        font-weight: 700;
+}
+
+.root button:hover{
+        cursor: pointer;
+        background-color: black;
+        color: white;
+}
+
+.showed-opt{
+        display: block;
+}
+
+.hidden-opt{
+        display: none;
+}
+
+
+.display-try-psswd{
+        margin-top: 40px;
+}
+
+.options-default{
+        margin-top: 15px;
+        padding-left: 10px;
+        border-left-style: solid;
+        border-color: white;
+}
+
+
